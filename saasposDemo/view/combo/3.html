@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.combo回调</title>
+    <link rel="stylesheet" href="../../css/ui.common.css">
+    <link rel="stylesheet" href="../../css/green/ui.icon.css">
+    <link rel="stylesheet" href="../../css/green/ui.combo.css">
+    <link rel="stylesheet" href="../../css/ui.bill.css">
+</head>
+
+<body>
+
+    <div class="mb20">
+        <label>供应商:</label>
+        <span class="ui-combo-wrap" id="customer">
+            <input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date">
+        </span>
+    </div>
+
+    <script src="../../js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../js/common/plugins/combo/js/jquery.combo.js"></script>
+    <script>
+        $(function () {
+            var $customer = $("#customer");
+            var opts = {
+                data:[{id:1,name:'a1'},{id:2,name:'a2'},{id:3,name:'a3'},{id:4,name:'a4'}],
+                // -> 可以修改combo控件的宽高度
+                width:300,
+                // -> 控件需要显示的格式,row参数为当前行的数据对象
+                formatText:function(row){
+                    return row.id + ' '+row.name;
+                },
+                // -> 变成可输入的
+                editable:true,
+                value:'id',
+                text:'name',
+                callback:{
+                    // -> 获取焦点时调用
+                    onFocus:function(){
+                        console.log(this);// -> Combo
+                    },
+                    // -> 数据变更后调用
+                    onChange:function(sel){
+                        console.log(sel); // -> sel为变更后的数据
+                    },
+                    // -> 点击ITEM时调用
+                    onListClick:function(){
+                        console.log('click-item');
+                    }
+                }
+            };
+            var customerCombo = $customer.combo(opts).getCombo();
+        });
+    </script>
+</body>
+
+</html>

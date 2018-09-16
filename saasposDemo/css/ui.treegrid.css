@@ -1,0 +1,12 @@
+@charset "utf-8";
+.tree-wrap .ui-icon {
+	background-image: url(img/zTreeStandard.png);
+}
+.tree-wrap .ui-icon-triangle-1-s {background-position: -110px -16px;height: 16px;width: 16px;}
+.tree-wrap .ui-icon-triangle-1-e {background-position: -110px 0;height: 16px;width: 16px;}
+.tree-wrap .ui-icon-radio-off {background-position: -110px -32px;height: 16px;width: 16px;}
+
+.level1{}
+.level2{background: #f6f6f6;}
+.level3{background: #f0f0f0;}
+.level4{background: #f6f6f6;}

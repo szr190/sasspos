@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.validator基础应用</title>
+    <link rel="stylesheet" href="../../css/ui.common.css">
+    <link rel="stylesheet" href="../../css/green/ui.base.css">
+    <link rel="stylesheet" href="../../css/green/ui.pikaday.css">
+    <link rel="stylesheet" href="../../js/common/plugins/validator/css/jquery.validator.css">
+</head>
+
+<body>
+
+    <div class="manage-wrapper">
+        <div class="manage-wrap" id="manage-wrap">
+            <form action="" id="manage-form">
+                <ul class="mod-form-rows base-form" id="base-form">
+                    <li class="row-item odd">
+                        <div class="label-wrap">
+                            <label for="number">客户编号</label>
+                        </div>
+                        <div class="ctn-wrap">
+                            <input type="text" value="" class="ui-input" name="number" id="number">
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap">
+                            <label for="name">客户名称</label>
+                        </div>
+                        <div class="ctn-wrap">
+                            <input type="text" value="" class="ui-input" name="name" id="name">
+                        </div>
+                    </li>
+                    <li class="row-item odd">
+                        <div class="label-wrap">
+                            <label for="date">日期</label>
+                        </div>
+                        <div class="ctn-wrap">
+                            <input type="text" value="" class="ui-input ui-datepicker-input" name="date" id="date" />
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap">
+                            <label for="receiveFunds">手机号</label>
+                        </div>
+                        <div class="ctn-wrap">
+                            <input type="text" value="" class="ui-input" name="mobile" id="receiveFunds">
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap">
+                            <label for="periodReceiveFunds">期初预收款</label>
+                        </div>
+                        <div class="ctn-wrap">
+                            <input type="text" value="" class="ui-input" name="periodReceiveFunds" id="periodReceiveFunds">
+                        </div>
+                    </li>
+                </ul>
+                <div>
+                    <input type="button" id="jsSub" value="js保存" class="ui_state_highlight">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="../../js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../js/common/plugins/datepicker/pikaday/js/pikaday.js"></script>
+    <script src="../../js/common/plugins/datepicker/pikaday/js/jquery.pikaday.js"></script>
+    <script src="../../js/common/plugins/validator/js/jquery.validator.js"></script>
+    <script src="../../js/common/plugins/validator/js/local/zh_CN.js"></script>
+    <script>
+        $(function () {
+            var $manageForm = $("#manage-form");
+            // -> 日期选择器调用
+            $(".ui-datepicker-input").pikaday({ setDefaultDate: true });
+
+            // -> 点击保存的时候校验表单
+            $("#jsSub").on('click', function () {
+                $manageForm.trigger("validate");
+            });
+
+            // -> 表单校验选项
+            $manageForm.validator({
+                // -> 自定义用于当前实例的规则
+                rules: {
+                    number: function (element, params) {
+                        var val = $(element).val();
+                        try {
+                            val = Number(val);
+                            if (val) {
+                                $(element).val(val);
+                                return true;
+                            }
+                            else {
+                                return '字段不合法！请输入数值';
+                            }
+                        } catch (e) {
+                            return '字段不合法！请输入数值';
+                        }
+                    }
+                },
+                // -> 自定义用于当前实例的消息
+                message: {
+                    required: "请填写{0}",
+                    checkCode: "{0}",
+                    name: "{0}"
+                },
+                valid: function (form) {
+                    //表单验证通过
+                    alert(1);
+                },
+                theme: 'yellow_bottom',
+                timely: 1,
+                stopOnError: true
+            });
+        });
+    </script>
+</body>
+
+</html>

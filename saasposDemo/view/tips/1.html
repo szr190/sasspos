@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="../../css/ui.common.css">
+    <link rel="stylesheet" href="../../css/green/ui.tips.css">
+</head>
+
+<body>
+
+    <div class="mb20">
+        <button id="tipsErrorBtn">tips错误提示</button>
+        <br/>
+        <button id="tipsSuccessBtn">tips成功提示</button>
+        <br/>
+        <button id="tipsWarnBtn">tips警告提示</button>
+    </div>
+
+
+    <script src="../../js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../js/common/public.js"></script>
+    <script>
+        $(function(){
+            var $tipsErrorBtn = $('#tipsErrorBtn'),
+                $tipsSuccessBtn = $("#tipsSuccessBtn"),
+                $tipsWarnBtn = $("#tipsWarnBtn");
+            $tipsErrorBtn.on('click',function(){
+                Public.tips({
+                    // -> 提示的内容
+                    content:'有错误',
+                    // -> 0 success | 1 error | 2 warning
+                    type:1,
+                    // -> 是否自动关闭
+                    autoClose:true,
+                    // -> 是否移除其它tips
+                    removeOthers:true,
+                    // -> 若自动关闭,tips显示的时间
+                    time:3000,
+                    // -> 距离顶部的位置
+                    top:20,
+                    // -> 依附的父元素
+                    renderTo:'body',
+                    // -> 关闭时的回调函数
+                    onClose:function(){
+                        console.log('1-close');
+                    },
+                    // -> 显示时的回调函数
+                    onShow:function(){
+                        console.log('2-show');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

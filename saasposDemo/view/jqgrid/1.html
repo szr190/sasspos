@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.jqgrid基础使用</title>
+    <link rel="stylesheet" href="../../css/ui.common.css">
+    <link rel="stylesheet" href="../../css/green/ui.jqgrid.css">
+</head>
+
+<body>
+
+    <div class="grid-wrap mb20">
+        <table id="grid">
+        </table>
+        <div id="page"></div>
+    </div>​
+
+    <script src="../../js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../js/common/plugins/jqgrid/js/jquery.jqGrid.src.js"></script>
+    <script src="../../js/common/plugins/jqgrid/js/i18n/grid.locale-cn.js"></script>
+    <script>
+        $(function () {
+            function sexFn(cellValue,options,rowObject) {
+                if(cellValue == '0'){
+                    return '男';
+                }
+                if(cellValue == '1'){
+                    return '女';
+                }
+            }
+
+            // 主要用到的参数
+            // 1、align 定义单元格内容的位置(left,center,right)
+            // 2、classes 设置列的css,多个class名称之间使用空格分隔
+            // 3、editable 单元格是否可编辑
+            // 4、fixed 列宽度是否要固定不可变
+            // 5、formatter 格式化
+            // 6、hidden 是否隐藏
+            // 7、label 列的显示名称
+            // 8、name 表格列的关键字
+            // 9、sortable 是否可排序
+            var colModel = [
+                { name: 'id', label: '编号', width: '100', index: 'id' }, 
+                { name: 'name', label: '姓名', width: '100', index: 'name' }, 
+                { name: 'type', label: '类别', width: '100', index: 'type' }, 
+                { name: 'sex', label: '性别', width: '100', index: 'sex',formatter:sexFn },
+                { name: 'score', label: '分数' , width: '100' , index:'score'}
+            ];
+            // -> 初始化grid
+            $("#grid").jqGrid({
+                // url -> 获取数据的地址
+                url: 'http://localhost:8000/api/jqgridlist',
+                // datatype -> 从服务器端返回的数据类型
+                datatype: 'json',
+                colModel: colModel,
+                pager: '#page',
+                rowNum: 7,
+                rowList: [5, 10, 15, 20],
+                loadComplete: function (data) {
+                    if (data !== '') {
+                        var gridData = {};
+                        res = data;
+                        for (var i = 0; i < res.length; i++) {
+                            var item = res[i];
+                            gridData[item.id] = item;
+                        }
+                        $("#grid").data('gridData', gridData);
+                    } else {
+                        console.log('无满足条件');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

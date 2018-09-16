@@ -1,0 +1,24 @@
+body{background: #fff;}
+.h5{height: 5px!important;}
+.h50{height: 50px!important;}
+.pros_content{margin-bottom: 20px;}
+/*流程模块*/
+.pros_content table{margin: 10px auto;}
+.pros_content table td{text-align: center;vertical-align: middle;position: relative;}
+.pros_mode{font-size: 14px;border-radius: 10px;border: #368ee0 solid 1px;overflow: hidden;background: #fff;}
+.pros_mode a{display: table-cell;width: 180px;height: 70px;background: #fff;position: relative;vertical-align: middle;padding: 0 10px;letter-spacing: 1px;}
+.pros_mode p{color: #368EE0;z-index: 3;text-align: center;line-height: 20px;}
+.pros_mode a:hover{background: #368EE0;}
+.pros_mode a:hover p{color: #fff;}
+
+.pros_tablegroup{border: #368EE0 dotted 3px;padding: 20px;border-radius: 15px;}
+/*不可单击流程*/
+.pros_modedis{border-color: #ccc;}
+.pros_modedis a{color: #ccc;}
+.pros_modedis p{color: #ccc;}
+.pros_modedis a:hover{background: #fff;cursor:default;}
+.pros_modedis a:hover p{color: #ccc;}
+
+/*标题*/
+.m_listtitle{font-size: 14px;font-weight: 800;color: #333;border-bottom: #ddd solid 1px;height: 40px;line-height: 30px;margin: 10px 15px;margin-bottom: 25px;}
+.m_listtitle p.m_lt{font-size:16px;border-bottom: #368ee0 solid 2px;/*width: 120px;*/line-height: 39px;float: left;cursor: pointer;padding: 0 10px;}

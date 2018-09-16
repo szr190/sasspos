@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.tab基础应用</title>
+    <link rel="stylesheet" href="../../css/ui.common.css">
+    <link rel="stylesheet" href="../../css/green/ui.base.css">
+    <link rel="stylesheet" href="../../css/ui.form.css">
+    <link rel="stylesheet" href="../../css/green/ui.tab.css">
+</head>
+
+<body>
+
+    <div class="hd cf">
+        <ul class="ui-tab" id="tab">
+            <li class="cur">基础资料</li>
+            <li>期初设置</li>
+        </ul>
+    </div>
+
+    <div class="manage-wrapper">1</div>
+    <div class="manage-wrapper dn">2</div>
+
+
+    <script src="../../js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../js/common/public.js"></script>
+    <script>
+        $(function () {
+            Public.tab('#tab',{tabContentClass:'manage-wrapper',callback:function(i){
+                var $tabBtn = $(this);// 按钮
+                var _index = i;
+                Public.tips({
+                    content:'callback tab index' + _index
+                });
+            }});
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+.ui-input {
+    padding: 5px;
+    width: 100px;
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid #d6dee3;
+    color: #555;
+    vertical-align: middle;
+    outline: 0
+}
+
+.ui-input-ph {
+    color: #aaa
+}
+
+.ui-input:hover {
+    border: 1px solid #a8b3b9
+}
+
+.ui-input:focus,.ui-input-focus {
+    border: 1px solid #2ca1b3
+}
+
+.ui-input-dis {
+    background: #f0f0f0;
+    color: #999;
+    cursor: not-allowed
+}
+
+.ui-input-dis:hover {
+    border-color: #ddd;
+    box-shadow: none
+}
+
+.ui-datepicker-input {
+    background: #FFF url(img/datepicker_icon.png) right 0 no-repeat
+}
+
+textarea.ui-input {
+    width: 300px;
+    height: 100px;
+    vertical-align: inherit;
+    *vertical-align: auto
+}
+
+.ui-search {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+    zoom: 1
+}
+
+.ui-search input {
+    padding-right: 30px;
+    width: 155px
+}
+
+.ui-search button {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 26px;
+    height: 28px;
+    border-width: 0;
+    background-position: 0 -48px;
+    text-indent: -9999px;
+    cursor: pointer;
+    overflow: hidden
+}
+
+.ui-search button:hover,.ui-search button:active {
+    background-position: -32px -48px
+}
+
+.ui-btn-prev,.ui-btn-next {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 28px;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    vertical-align: middle
+}
+
+.ui-btn-prev b,.ui-btn-prev-dis b,.ui-btn-next b,.ui-btn-next-dis b {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -5px 0 0 -3px;
+    width: 7px;
+    height: 11px;
+    overflow: hidden
+}
+
+.ui-btn-prev,.ui-btn-next {
+    border: 1px solid #bdbdbd;
+    background: #fcfcfc;
+    background: -moz-linear-gradient(top,#fcfcfc,#f4f4f4);
+    background: -webkit-gradient(linear,0 0,0 100%,from(#fcfcfc),to(#f4f4f4));
+    background: -o-linear-gradient(top,#fcfcfc,#f4f4f4);
+    background: -ms-linear-gradient(top,#fcfcfc 0,#f4f4f4 100%);
+    background: linear-gradient(top,#fcfcfc,#f4f4f4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc',endColorstr='#f4f4f4');
+    cursor: pointer
+}
+
+.ui-btn-prev:hover,.ui-btn-next:hover {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background: #f4f4f4
+}
+
+.ui-btn-prev:active,.ui-btn-next:active {
+    background: #fbfbfb;
+    background: -moz-linear-gradient(top,#e8e8e8,#fbfbfb);
+    background: -webkit-gradient(linear,0 0,0 100%,from(#e8e8e8),to(#fbfbfb));
+    background: -o-linear-gradient(top,#e8e8e8,#fbfbfb);
+    background: -ms-linear-gradient(top,#e8e8e8 0,#fbfbfb 100%);
+    background: linear-gradient(top,#e8e8e8,#fbfbfb);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8e8e8',endColorstr='#fbfbfb')
+}
+
+.ui-btn-prev b {
+    margin-left: -4px;
+    background-position: -32px -16px
+}
+
+.ui-btn-next b {
+    background-position: -48px -16px
+}
+
+.ui-btn-prev-dis,.ui-btn-next-dis,.ui-btn-prev-dis:hover,.ui-btn-next-dis:hover,.ui-btn-prev:active,.ui-btn-next:active {
+    border: 1px solid #cbcbcb;
+    background: #f4f4f4;
+    background: -moz-linear-gradient(top,#fff,#f4f4f4);
+    background: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#f4f4f4));
+    background: -o-linear-gradient(top,#fff,#f4f4f4);
+    background: -ms-linear-gradient(top,#fff 0,#f4f4f4 100%);
+    background: linear-gradient(top,#fff,#f4f4f4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#f4f4f4');
+    cursor: default
+}
+
+.ui-btn-prev-dis b {
+    margin-left: -4px;
+    background-position: -32px -32px
+}
+
+.ui-btn-next-dis b {
+    background-position: -48px -32px
+}
+
+.ui-spinbox-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    *display: inline;
+    zoom: 1;
+    margin-right: 10px
+}
+
+.ui-spinbox-wrap .input-txt {
+    outline: 0;
+    float: left;
+    width: 36px;
+    margin: 0;
+    border: 1px solid #ddd;
+    height: 16px;
+    line-height: 16px;
+    padding: 6px 5px;
+    color: #555;
+    border-right: 0
+}
+
+.ui-spinbox-wrap .btn-wrap {
+    float: left
+}
+
+.ui-spinbox-wrap a {
+    display: block;
+    font-size: 0;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    background-position: 0 -80px;
+    cursor: pointer
+}
+
+.ui-spinbox-wrap .btn-down {
+    height: 14px;
+    background-position: 0 -96px;
+    position: relative
+}
+
+.ui-spinbox-hover {
+    box-shadow: 0 1px 1px #ddd
+}
+
+.ui-spinbox-hover .input-txt {
+    border-color: #ccc
+}
+
+.ui-spinbox-hover .btn-up {
+    background-position: -16px -80px
+}
+
+.ui-spinbox-hover .btn-down {
+    background-position: -16px -96px
+}
+
+.ui-spinbox-hover .btn-wrap-hover .btn-up {
+    background-position: -48px -80px
+}
+
+.ui-spinbox-hover .btn-wrap-hover .btn-down {
+    background-position: -48px -96px
+}
+
+.ui-spinbox-hover .btn-wrap-hover .btn-up:hover {
+    background-position: 0 -112px
+}
+
+.ui-spinbox-hover .btn-wrap-hover .btn-down:hover {
+    background-position: 0 -128px
+}
+
+.ui-spinbox-active .input-txt {
+    border-color: #aaa
+}
+
+.ui-spinbox-active .btn-up {
+    background-position: -32px -80px
+}
+
+.ui-spinbox-active .btn-down {
+    background-position: -32px -96px
+}
+
+.ui-spinbox-active .btn-wrap-hover .btn-up {
+    background-position: -16px -112px
+}
+
+.ui-spinbox-active .btn-wrap-hover .btn-down {
+    background-position: -16px -128px
+}
+
+.ui-spinbox-active .btn-wrap-hover .btn-up:hover {
+    background-position: -32px -112px
+}
+
+.ui-spinbox-active .btn-wrap-hover .btn-down:hover {
+    background-position: -32px -128px
+}
+
+.ui-spinbox-disabled .input-txt {
+    background-color: #f0f0f0;
+    color: #ccc;
+    border-color: #ddd
+}
+
+.ui-spinbox-disabled a {
+    cursor: default
+}
+
+.ui-spinbox-disabled .btn-up,.ui-spinbox-disabled .btn-wrap-hover .btn-up,.ui-spinbox-disabled .btn-wrap-hover .btn-up:hover {
+    background-position: -48px -112px
+}
+
+.ui-spinbox-disabled .btn-down,.ui-spinbox-disabled .btn-wrap-hover .btn-down,.ui-spinbox-disabled .btn-wrap-hover .btn-down:hover {
+    background-position: -48px -128px
+}

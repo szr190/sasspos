@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.基础用法</title>
+    <link rel="stylesheet" href="../../css/ui.common.css">
+    <link rel="stylesheet" href="../../css/green/ui.icon.css">
+    <link rel="stylesheet" href="../../css/green/ui.combo.css">
+</head>
+
+<body>
+
+    <div class="mb20">
+        <label>供应商:</label>
+        <span class="ui-combo-wrap" id="customer">
+            <input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date">
+            <i class="ui-icon-triangle-1-s"></i>
+        </span>
+        <br/>
+        <!-- 方法1 选中指定的项 -->
+        <button id="selectBtn">选中指定的项</button>
+        <br/>
+        <!-- 方法2 获取 -->
+        <button id="get">获取</button>
+    </div>
+
+    <script src="../../js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../js/common/plugins/combo/js/jquery.combo.js"></script>
+    <script src="../../js/common/public.js"></script>
+    <script>
+        $(function () {
+            var $customer = $("#customer");
+            var opts = {
+                // -> 这里的data可能是一个数组、字符串或者函数
+                // -> 如果是数组可以直接使用这个数据
+                // -> 如果是字符串,则是此字符串是一个url,combo会用这个url进行ajax
+                // -> 如果是function,则应该return一个json数组以供使用   
+                data: [{ id: 1, name: '供应商' }, { id: 2, name: '公司' }, { id: 3, name: '用户' }],
+                text:'name',
+                value:'id',
+                trigger: true,
+                triggerCls: 'ui-icon-triangle-1-s'
+            };
+            var customerCombo = $customer.combo(opts).getCombo();
+
+            // -> 选中指定项方法
+            $("#selectBtn").on('click',function(){
+                // -> 通过value值选中项
+                customerCombo.selectByValue(2,false);
+                // -> 通过索引选中项
+                // customerCombo.selectByIndex(2,true);
+                // -> 通过文本选中项
+                customerCombo.selectByText('公司',true);
+            });
+
+            // -> 获取值
+            $("#get").on('click',function(){
+                // -> 返回的是当前选中的value值
+                console.log(customerCombo.getValue());
+                // -> 返回当前选中项返回的文本
+                console.log(customerCombo.getText());
+                // -> 获取选中项的原始数据项,例如：{id:1,name:'供应商'}
+                console.log(customerCombo.getSelectedRow());
+                // -> 获取选中项的索引
+                console.log(customerCombo.getSelectedIndex());
+                // -> 获取所有的数据 rawData {id: 1, name: "供应商"} , text:"供应商,"value:1
+                console.log(customerCombo.getAllData());
+                // -> 获取所有的实际数据
+                console.log(customerCombo.getAllRawData());
+            });
+        });
+    </script>
+</body>
+
+</html>

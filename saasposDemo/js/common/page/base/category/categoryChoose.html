@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>品类选择</title>
+    
+    <link href="/front/v3/css/ui.fonticon.css" rel="stylesheet"/>
+    <link href="/front/v3/css/ui.list.css" rel="stylesheet"/>
+    <link href="/front/v3/css/ui.common.css" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.tips.css" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.dialog.css" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.icon.css" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.jqgrid.css" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/ui.treegrid.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="/front/v3/js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/dialog/js/jquery.dialog.js?self=true"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/jqgrid/js/jquery.jqGrid.src.js"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/jqgrid/js/i18n/grid.locale-cn.js"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/datepicker/pikaday/js/pikaday.js"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/datepicker/pikaday/js/jquery.pikaday.js"></script>
+    
+    <script type="text/javascript" src="/front/v3/js/common/public.js"></script>
+    <script type="text/javascript" src="/front/v3/js/common/ui.binding.js"></script>
+    
+    <script type="text/javascript" src="../static/js/category/categoryChoose.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="content pl15 pt15 pr15">
+        <!--搜索-->
+        <div class="d_h clearfix magb10 clearfix">
+            <input type="text" id="queryParam" enterKeySearch="#queryBtn" class="focus fl pad5 border-ebebeb font12 wid200" placeholder="请输入品类编码/品类名称"/>
+
+            <div id="queryBtn" class="btn btn-primary fl magr10 borderra0">
+            	<span class="glyphicon glyphicon-search fl magt5 magr5 font14"></span>查询
+            </div>
+            <div class="fr padt5">
+                <!-- <a class="fr" href="javascript:void(0);" id="openCreateWindow"><i
+                        class="fa fa-plus-circle font20 color-368ee0 magr5 fl d_adddmes"></i><span
+                        class="color-000">新增</span></a> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid-wrap ml15 mr15">
+    <table id="grid">
+    </table>
+</div>
+</body>
+</html>

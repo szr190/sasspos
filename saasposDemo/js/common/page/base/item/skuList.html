@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>单品视图</title>
+    
+    <link href="/front/v3/fontss/iconfont.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/ui.fonticon.css?v=2016041209" rel="stylesheet"/>
+    <link href="/front/v3/css/ui.list.css?v=2016041209" rel="stylesheet"/>
+    
+    <link href="/front/v3/css/ui.common.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.icon.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.combo.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.tips.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.tree.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.dialog.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.jqgrid.css?v=2016041209" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="/front/v3/js/common/libs/jquery/jquery-1.10.2.min.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/combo/js/jquery.combo.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/jqgrid/js/jquery.jqGrid.src.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/dialog/js/jquery.dialog.js?self=false&v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/jqgrid/js/i18n/grid.locale-cn.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/datepicker/pikaday/js/pikaday.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/datepicker/pikaday/js/jquery.pikaday.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/validator/js/jquery.validator.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/validator/js/local/zh_CN.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/ztree/js/jquery.ztree.all-3.5.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/public.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/business.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/ui.binding.js?v=2016041209"></script>
+    <style>
+        /*#matchCon { width: 200px; }
+        .grid-wrap{position:relative;}
+        .ztreeDefault{position: absolute;right: 0;top: 32px;background-color: #fff;border: 1px solid #D6D5D5;width: 200px;height: 406px;overflow-y: auto;}
+        #treeType{position: absolute;right: 0;top: 0;}*/
+        #matchCon { width: 200px; }
+        .grid-wrap{position:relative;}
+        .ztreeDefault{position: absolute;right: auto;left:0;top: 32px;background-color: #fff;border: 1px solid #D6D5D5;width: 200px;height: 406px;overflow-y: auto;}
+        #treeType{position: absolute;right: auto;top: 0;left: 0;}
+        .grid-wrap .ui-jqgrid{float: right;}
+        .ui-jqgrid .ui-jqgrid-view{left: auto;right: 0;float: right;}
+    </style>
+</head>
+<body>
+	<div class="container">
+	    <div class="content pl15 pt15 pr15">
+	        <!--搜索-->
+            <form id="queryForm" action="">
+	        <div class="d_h clearfix magb10 clearfix">
+	            <input type="text" id="searchValue" name="searchValue" enterKeySearch="#queryBtn" class="focus fl pad5 border-ebebeb font12 wid310 svheadset_inputtext" placeholder="输入商品名/SPU商家编码/SKU编码/国际条码">
+                <input type="hidden" id="icatCode" name="icatCode">
+                <input type="hidden" id="brandCode" name="brandCode">
+                <div id="queryBtn" class="btn btn-primary fl magr10 borderra0 svheadset_Search"><span class="glyphicon glyphicon-search font14"></span> 查询
+                </div>
+                <div class="magl10 magt5 fl btn-gj color-797979"><span class="fa fa-filter font18 color-368ee0"></span> 筛选</div>
+	            <!--高级搜索-->
+	            <div class="gjss">
+	                <div class="col-sm-12">
+	                    <div class="row">
+	                        <label class="label">级别</label>
+	                        <input type="text" class="group"/>
+	                        <label class="label">所属</label>
+	                        <input type="text" class="group"/>
+	                    </div>
+	                    <div class="row">
+	                        <label class="label">姓名</label>
+	                        <input type="text" class="group"/>
+	                        <label class="label">手机</label>
+	                        <input type="text" class="group"/>
+	                    </div>
+	                    <div class="row">
+	                        <label class="label">行业</label>
+	                        <input type="text" class="group"/>
+	                        <label class="label">归属区域</label>
+	                        <input type="text" class="group"/>
+	                    </div>
+	                    <div class="row magb10">
+	                        <label class="label">版本</label>
+	                        <label for="d_ra" class="d_radio magr15">
+	                            <input type="radio" id="d_ra" class="magr5" name="radio" checked="checked"/> 免费
+	                        </label>
+	                        <label for="d_ra" class="d_radio magr15">
+	                            <input type="radio" id="d_ra" class="magr5" name="radio"/> 标准
+	                        </label>
+	                        <label for="d_ra" class="d_radio magr20">
+	                            <input type="radio" id="d_ra" class="magr5" name="radio"/> 专业
+	                        </label>
+	                        <label for="d_check" class="d_checkboxs">
+	                            <input type="checkbox" id="d_check"/>
+	                        </label> 显示一级下级所有代理商
+	                    </div>
+	                    <div class="ros magt15 texc magb15">
+	                        <div class="btns clearfix">
+	                            <div class="btn btn-primarys wids40 fl magl25 btn-right padtb10 btn-gjr">确定</div>
+	                            <div class="btn btn-link btn-cancel btn-gjq">取消</div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	
+	        </div>
+	        </form>
+	        <div class=" bg-F5F5F5 clearfix magb10 pad10 font12">
+	            <p class="fl magr15">筛选</p>
+	
+	            <div class="fl magb10 d_xz">
+	                <p class="fl magr25">商家名称：商家1<span class="d_xzdel">x</span></p>
+	
+	                <p class="fl magr25">所属代理：代理1<span class="d_xzdel">x</span></p>
+	            </div>
+	            <p class="fl magl15 font12 color-797979">的结果，共为您找到5条符合的数据</p>
+	
+	            <p class="fr font18"><a href="#" class="texdn"><span class="glyphicon-edit color-368ee0"></span></a></p>
+	        </div>
+	    </div>
+	</div>
+    <div class="grid-wrap">
+    	<table id="grid"></table>
+    	<div id="page"></div>
+    	<span class="ui-combo-wrap" id="treeType">
+   			<input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date">
+   			<i class="ui-icon-triangle-1-s"></i>
+   		</span>
+    	<div class="ztreeDefault">
+  		</div>
+    </div>
+	<script src="../static/js/item/skuList.js?v=2017060901"></script>
+</body>
+</html>

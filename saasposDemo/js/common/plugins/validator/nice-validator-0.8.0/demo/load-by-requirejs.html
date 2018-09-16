@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Load By RequireJS</title>
+	<link rel="stylesheet" href="demo.css">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            min-width: 780px;
+            padding: 15px 0 0 18px;
+            margin: 20px 0 0 10px;
+        }
+        h2{
+            font: 12px/1.5 arial ;
+            font-weight: bold;
+            color: #555;
+        }
+        .top input{
+            width: 186px;
+            height: 33px;
+            margin: 0 10px 20px 0;
+        }
+        .content,.content1,.content2{
+            width:99%;
+            background: #f6f6f6;
+            border: 1px solid #ddd;
+        }
+        .wrap p{
+            padding-left: 10px;
+            color: #555;
+        }
+        .content2 .special{
+            display: block;
+        }
+        .content2 .common{
+            padding-left: 35px;
+        }
+        .wrap .top .date{
+            font-weight: bold;
+            padding: 0;
+        }
+        .wrap .tip{
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+<form data-validator-option="{timely:2}">
+</form>
+<div class="wrap">
+    <h2>Load By RequireJS组件基础使用</h2>
+    <div class="top">
+        <!--<p class="date">Date:</p>-->
+    </div>
+    <div class="form-item">
+        <input type="text" name="user[email]" data-rule="required;email" placeholder="Email">
+    </div>
+    <div class="form-item">
+        <input type="password" name="password" data-rule="required;" placeholder="Password">
+    </div>
+    <div class="form-item">
+        <button type="submit">Submit</button>
+    </div>
+    <p class="tip">1、页面引入js、css：</p>
+    <div class="content">
+        <p>&lt;link rel="stylesheet" href="demo.css"&gt;</p>
+        <p style="margin-bottom: 20px">&lt;script src="http://requirejs.org/docs/release/2.1.17/minified/require.js"&gt;</p>
+    </div>
+    <p class="tip">2、html标签：</p>
+    <div class="content1">
+        <p>&lt;input type="text" name="user[email]" data-rule="required;email" placeholder="Email"&gt;</p>
+        <p>&lt;input type="password" name="password" data-rule="required;" placeholder="Password"&gt;&lt;input type="text" name="user[email]" data-rule="required;email" placeholder="Email"&gt;</p>
+        <p style="margin-bottom: 20px">&lt;button type="submit"&gt;Submit&lt;/button&gt;</p>
+    </div>
+    <p class="tip">3、组件渲染：</p>
+    <div class="content2">
+        <p>&lt;script&gt;</p>
+        <p>requirejs.config({</p>
+        <p class="common">paths: {</p>
+        <p class="common">jquery: 'http://dn-nice.qbox.me/libs/jquery/1.x/jquery.min',</p>
+        <p class="common">validator: '../local/en'</p>
+        <p class="__web-inspector-hide-shortcut__ common" >}<br></p>
+        <p class="common">});<br></p>
+        <p>define('demo', ['jquery', 'validator'], function($){</p>
+        <p>});</p>
+        <p>require(['demo']);</p>
+    </div>
+</div>
+
+<script src="http://requirejs.org/docs/release/2.1.17/minified/require.js"></script>
+<script>
+requirejs.config({
+    paths: {
+        jquery: 'http://dn-nice.qbox.me/libs/jquery/1.x/jquery.min',
+        validator: '../local/en'
+    }
+});
+
+define('demo', ['jquery', 'validator'], function($){
+    // do something
+});
+
+require(['demo']);
+
+</script>
+</body>
+</html>

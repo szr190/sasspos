@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>选择大类</title>
+    
+    <link href="/front/v3/fontss/iconfont.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/ui.fonticon.css?v=2016041209" rel="stylesheet"/>
+    <link href="/front/v3/css/ui.list.css?v=2016041209" rel="stylesheet"/>
+    
+    <link href="/front/v3/css/ui.common.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.icon.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.combo.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.tips.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.tree.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.dialog.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.jqgrid.css?v=2016041209" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="/front/v3/js/common/libs/jquery/jquery-1.10.2.min.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/combo/js/jquery.combo.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/jqgrid/js/jquery.jqGrid.src.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/dialog/js/jquery.dialog.js?self=false&v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/jqgrid/js/i18n/grid.locale-cn.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/datepicker/pikaday/js/pikaday.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/datepicker/pikaday/js/jquery.pikaday.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/validator/js/jquery.validator.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/validator/js/local/zh_CN.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/ztree/js/jquery.ztree.all-3.5.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/public.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/business.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/ui.binding.js?v=2016041209"></script>
+    <script src="../../../reSetDomain.js"></script>
+    <style>
+        #matchCon { width:180px; }
+        .grid-wrap{position:relative;}
+        .ztreeDefault{position: absolute;right: auto;left:0;top: 44px;background-color: #fff;border: 1px solid #D6D5D5;width:180px;height: 406px;overflow-y: auto;}
+        #treeType{position: absolute;right: auto;top: 15px;left: 0;}
+        .grid-wrap .ui-jqgrid{float: right;}
+        .ui-jqgrid .ui-jqgrid-view{left: auto;right: 0;float: right;}
+    </style>
+</head>
+<body>
+	<div class="container">
+		<span class="ui-combo-wrap" id="treeType">
+ 			<input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date">
+ 			<i class="ui-icon-triangle-1-s"></i>
+ 		</span>
+  	<div class="ztreeDefault">
+		</div>
+	    <div class="content pl15 pt15 pr15" style="margin-left: 175px;">
+	        <!--搜索-->
+            <form id="queryForm" action="">
+	        <div class="d_h clearfix magb10 clearfix">
+	            <input type="text" id="searchKey" name="searchKey" enterKeySearch="#queryBtn" class="focus fl pad5 border-ebebeb font12 wid310 svheadset_inputtext" placeholder="输入类别编码/名称">
+                <input type="hidden" id="parentCode" name="parentCode">
+                <div id="queryBtn" class="btn btn-primarys fl magr10 borderra0 svheadset_Search">查询
+                </div>
+	        </div>
+	        </form>
+	    </div>
+	    <div class="grid-wrap">
+	    	<table id="grid"></table>
+	    	<div id="page"></div>
+	    	
+	    </div>
+  </div>
+	<script src="../static/js/item/bigIcatChoose.js"></script>
+</body>
+</html>

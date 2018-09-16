@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="../../css/ui.common.css">
+    <link rel="stylesheet" href="../../css/green/ui.dialog.css">
+</head>
+
+<body>
+
+    <div class="mb20">
+        <button id="dialogBtn1">打开窗口加载html片段</button>
+    </div>
+
+    <script src="../../js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../js/common/plugins/dialog/js/jquery.dialog.js"></script>
+    <script>
+        $(function(){
+            $("#dialogBtn1").on('click',function(){
+                $.dialog({
+                    width:'280',
+                    // -> title 窗口的标题文本,若为false,则隐藏
+                    title:'系统提示',
+                    // -> icon 定义消息图标
+                    icon:'alert',
+                    // -> fixed 开启固定定位不受滚动条的影响
+                    fixed:true,
+                    // -> ok/cancel 确定/取消按钮的回调
+                    ok:true,
+                    cancel:true,
+                    // -> 窗口中加载的内容,若想加载一个整页面的话,只需在字符前面加url即可
+                    content:'<h3>Hello</h3>'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

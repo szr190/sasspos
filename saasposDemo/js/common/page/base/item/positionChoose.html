@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>选择品牌</title>
+    
+    <link href="/front/v3/fontss/iconfont.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/ui.fonticon.css?v=2016041209" rel="stylesheet"/>
+    <link href="/front/v3/css/ui.list.css?v=2016041209" rel="stylesheet"/>
+    
+    <link href="/front/v3/css/ui.common.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.icon.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.combo.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.tips.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.tree.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.dialog.css?v=2016041209" rel="stylesheet" type="text/css">
+    <link href="/front/v3/css/green/ui.jqgrid.css?v=2016041209" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="/front/v3/js/common/libs/jquery/jquery-1.10.2.min.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/combo/js/jquery.combo.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/jqgrid/js/jquery.jqGrid.src.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/dialog/js/jquery.dialog.js?self=false&v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/jqgrid/js/i18n/grid.locale-cn.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/datepicker/pikaday/js/pikaday.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/datepicker/pikaday/js/jquery.pikaday.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/validator/js/jquery.validator.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/validator/js/local/zh_CN.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/plugins/ztree/js/jquery.ztree.all-3.5.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/public.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/business.js?v=2016041209"></script>
+    <script type="text/javascript" src="/front/v3/js/common/ui.binding.js?v=2016041209"></script>
+    <script src="../../../reSetDomain.js"></script>
+    <style>
+        #matchCon { width: 200px; }
+        .grid-wrap{position:relative;}
+        .ztreeDefault{position: absolute;right: auto;left:10px;top:15px;background-color: #fff;width: 250px;height: 406px;overflow-y: auto;}
+        #treeType{position: absolute;right: auto;top: 15px;left: 0;}
+        .grid-wrap .ui-jqgrid{float: right;}
+        .ui-jqgrid .ui-jqgrid-view{left: auto;right: 0;float: right;}
+    </style>
+</head>
+<body>
+	<div class="container grid-wrap">
+         <a href = "www.baidu.com" class = "btn" id = "cancelBtn" style = "display:block"></a>
+		<!--<span class="ui-combo-wrap" id="treeType">-->
+ 			<!--<input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date">-->
+ 			<!--<i class="ui-icon-triangle-1-s"></i>-->
+ 		<!--</span>-->
+  	    <div class="ztreeDefault">
+            <input type="text" class="input-txt ui-input w160 ml5 mt5" id="brandTreeSearch" placeholder="请输入名称"/>
+		</div>
+	    <div class="content pl10 pt15 pr15" style="display:none">
+
+            <form id="queryForm" action="">
+	        <div class="d_h clearfix magb10 clearfix">
+	            <input type="text" id="searchKey" name="searchKey" enterKeySearch="#queryBtn" class="focus fl pad5 border-ebebeb font12 wid310 svheadset_inputtext" placeholder="输入名称">
+                <input type="hidden" id="pCode" name="pCode">
+                <div id="queryBtn" class="btn btn-primarys fl magr10 borderra0 svheadset_Search">查询
+                </div>
+	
+	        </div>
+	        </form>
+	    </div>
+	
+	  <!--   <div class="grid-wrap>
+	    	<table id="grid"></table>
+	    	<div id="page"></div>
+	    	
+	    </div> -->
+  </div>
+	<script src="../static/js/item/positionChoose.js?v=2017060602"></script>
+</body>
+</html>

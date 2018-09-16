@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.combo ajax</title>
+    <link rel="stylesheet" href="../../css/ui.common.css">
+    <link rel="stylesheet" href="../../css/green/ui.icon.css">
+    <link rel="stylesheet" href="../../css/green/ui.combo.css">
+    <link rel="stylesheet" href="../../css/ui.bill.css">
+</head>
+
+<body>
+
+    <div class="mb20">
+        <label>供应商:</label>
+        <span class="ui-combo-wrap" id="customer">
+            <input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date">
+        </span>
+
+        <button id="reloadData">重新加载数据</button>
+    </div>
+
+    <script src="../../js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+    <script src="../../js/common/plugins/combo/js/jquery.combo.js"></script>
+    <script>
+        $(function () {
+            var $customer = $("#customer");
+            var opts = {
+                data:'http://localhost:8000/api/combolist',
+                // -> 可以修改combo控件的宽高度
+                width:300,
+                // -> 控件需要显示的格式,row参数为当前行的数据对象
+                formatText:function(row){
+                    return row.id + ' '+row.name;
+                },
+                // -> 变成可输入的
+                editable:true,
+                value:'id',
+                text:'name'
+            };
+            var customerCombo = $customer.combo(opts).getCombo();
+
+            // -> 重新加载数据的方法
+            $("#reloadData").on('click',function(){
+                // -> 重新加载一遍数据,加载完后默认让其选中id为2的项
+                customerCombo.loadData('http://localhost:8000/api/combolist',['id',2])
+            });
+        });
+    </script>
+</body>
+
+</html>

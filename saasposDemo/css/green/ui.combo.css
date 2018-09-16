@@ -1,0 +1,34 @@
+/* 下拉框 */
+.ui-combo-wrap { position: relative; display: inline-block; height: 28px; *display:inline;vertical-align: middle; background-color: #fff; border: 1px solid #D6DEE3; color: #555; overflow: hidden; zoom: 1; }
+.ui-combo-wrap i{ position: absolute;/*top: 50%;*//*margin-top: -15px;*/right: 0;border: medium none;cursor: pointer;font-size: 16px!important;width: 16px;/*height: 28px!important;line-height: 28px!important;*/}
+.ui-combo-wrap:hover { border: 1px solid #A8B3B9; }
+.ui-combo-wrap .input-txt { outline:none;float: left; padding: 5px; height: 18px; line-height: 18px; color: #555; border: 0; }
+.ui-combo-wrap .trigger { float: left; width: 16px; height: 100%; overflow: hidden; background-position: 0 -16px; }
+.ui-combo-wrap .trigger:hover { background-position: -16px -16px; }
+.ui-combo-active, .ui-combo-active:hover { border: 1px solid #2CA1B3; }
+.ui-combo-active, .ui-combo-active input{ }
+.ui-combo-disabled .input-txt { background-color: #f0f0f0; color: #aaa; }
+.ui-combo-disabled .trigger, .ui-combo-disabled .trigger:hover { background-color: #f0f0f0; background-position: 0 -16px; }
+.ui-combo-disabled .ui-icon-ellipsis { display: none; }
+.ui-combo-disabled:hover { border: 1px solid #D6DEE3; }
+.ctn-wrap .ui-combo-wrap{width: 157px!important;}
+/* 下拉显示部分 */
+.ui-droplist-wrap { background: #fff; border: 1px solid #aaa; box-shadow: 0 1px 3px rgba(0,0,0,0.15); z-index: 500; }
+.ui-droplist-wrap .droplist { background-color: #fff; position: relative; }
+.ui-droplist-wrap .list-item {_position:relative; padding: 2px 5px; line-height: 22px; cursor: default; overflow: hidden; }
+.ui-droplist-wrap .droplist .list-item span {display: inline-block;height: 28px;line-height: 28px;word-wrap: nowrap;word-break: nowrap;white-space: pre;border-right: 1px solid #ccc;overflow: hidden;padding-left: 4px;}
+.ui-droplist-wrap .loading { line-height: 26px; padding: 5px 5px 5px 40px; background: url('img/loading.gif') no-repeat 10px center; }
+.ui-droplist-wrap .tips { line-height: 18px; padding: 5px; }
+.ui-droplist-wrap .on { background-color: #eee;}
+.ui-droplist-wrap .selected { background-color: #d2d2d2; }
+.ui-droplist-wrap .head { background-color: #f5f5f5; }
+.ui-subjectList-wrap .list-item{font-size:12px;}
+.ui-combo-wrap-small{height: 22px;}
+.ui-combo-wrap-small .input-txt{padding: 3px 5px; height: 14px;font-size: 12px;line-height: 14px;}
+.ui-droplist-wrap-small .list-item{font-size: 12px;line-height: 20px;}
+.ui-combo-wrap-small .trigger{background-position: 0 -19px;}
+.ui-combo-wrap-small .trigger:hover { background-position: -16px -19px; }
+.ui-droplist-wrap .extra-list-ctn{border-top: 1px solid #ddd; background: #f5f5f5;padding-left: 5px;}
+/* 快捷添加 */
+.quick-add-link{line-height:30px;padding-left:20px;position:relative;color:#555;cursor:pointer;outline:medium none;text-decoration:none}
+.quick-add-link i{left:0;position:absolute;top:-2px}

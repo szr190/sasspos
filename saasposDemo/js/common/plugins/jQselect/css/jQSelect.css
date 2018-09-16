@@ -1,0 +1,104 @@
+
+.se_selectbox {
+	width: 160px;
+	display: inline-block;
+	position: relative;
+}
+
+.se_cartes {
+	background-color: #fff;
+	border: 1px solid #D6DEE3;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	height: 28px;
+	line-height: 27px;
+	padding: 0 0 0 7px;
+	color: #444;
+	cursor: pointer;
+}
+
+.se_listTxt {
+	border: none;
+	background: none;
+	padding: 0px;
+	font-size: 14px;
+	padding: 4px 0;
+	width: 88%;
+	height: 20px;
+	line-height: 20px;
+	cursor: auto;
+	outline: none;
+}
+
+.se_listBtn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	height: 100%;
+	width: 18px;
+}
+
+.se_listBtn b {
+	width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #333;
+	margin-top: 10px;
+	display: block;
+}
+
+.se_lists {
+	background: #fff;
+	border: 1px solid #D6DEE3;
+	border-top: 0;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	display: none;
+	width: 158px;
+}
+
+.se_lists .se_list {
+	margin: 0;
+	padding: 0 0 0 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	max-height: 200px;
+}
+
+.se_lists li {
+	padding: 0px 0px 0px 8px;
+	cursor: pointer;
+	font-size: 14px;
+	height: 28px;
+	line-height: 28px;
+	color: #5e5e5e;
+	font-size: 14px;
+}
+
+.se_lists li.se_cgray {
+	background: #eee;
+	color: #555;
+}
+
+.se_hover .se_lists {
+	display: block;
+}
+
+.se_hover .se_cartes {
+	border: 1px solid #D6DEE3;
+	background-color: #fff;
+}
+
+.se_hover .se_listBtn {
+	background: transparent;
+	border-left: none;
+	filter: none;
+}
+
+.se_hover .se_listBtn b {
+	background-position: -18px 1px;
+}
